@@ -7,11 +7,11 @@ namespace FizzBuzz.Tests
     public class FizzBuzzPresenterTests
     {
         [TestMethod]
-        public void CanCreateFizzBuzzPresenter()
+        public void CheckPresenterPresentsSomething()
         {
             var sut = new FizzBuzzPresenter();
-
-            sut.Should().NotBeNull();
+            string result = sut.RunFizzBuzzOneToHundred();
+            result.Should().NotBeNullOrEmpty();
         }
     }
 }
