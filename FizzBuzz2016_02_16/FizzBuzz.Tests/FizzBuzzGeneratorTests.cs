@@ -26,6 +26,12 @@
             Should_Convert_Number_To_ExpectedOutput(2, "2");
         }
 
+        [TestMethod]
+        public void CanConvertThree()
+        {
+            Should_Convert_Number_To_ExpectedOutput(3, "Fizz");
+        }
+
         private void Should_Convert_Number_To_ExpectedOutput(int numberToConvert, string expected)
         {
             string result = _sut.Convert(numberToConvert);

@@ -2,9 +2,21 @@
 {
     public class FizzBuzzConverter
     {
-        public string Convert(int numberToConvert)
+        private const string Fizz = "Fizz";
+
+        public string Convert(int number)
         {
-            return numberToConvert.ToString();
+            if (IsFizz(number))
+            { 
+                return Fizz;
+            }
+
+            return number.ToString();
+        }
+
+        private bool IsFizz(int number)
+        {
+            return number == 3;
         }
     }
 }
