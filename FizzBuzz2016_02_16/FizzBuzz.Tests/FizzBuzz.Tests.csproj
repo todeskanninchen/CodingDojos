@@ -61,6 +61,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FizzBuzzGeneratorTests.cs" />
+    <Compile Include="FizzBuzzPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
