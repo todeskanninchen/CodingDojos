@@ -4,7 +4,7 @@
     {
         public string Convert(int numberToConvert)
         {
-            return "1";
+            return numberToConvert.ToString();
         }
     }
 }

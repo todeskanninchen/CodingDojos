@@ -6,14 +6,31 @@
     [TestClass]
     public class FizzBuzzGeneratorTests
     {
+        private FizzBuzzConverter _sut;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _sut = new FizzBuzzConverter();
+        }
+
         [TestMethod]
         public void CanConvertOne()
         {
-            var sut = new FizzBuzzConverter();
+            Should_Convert_Number_To_ExpectedOutput(1, "1");
+        }
 
-            string result = sut.Convert(1);
+        [TestMethod]
+        public void CanConvertTwo()
+        {
+            Should_Convert_Number_To_ExpectedOutput(2, "2");
+        }
 
-            result.Should().Be("1");
+        private void Should_Convert_Number_To_ExpectedOutput(int numberToConvert, string expected)
+        {
+            string result = _sut.Convert(numberToConvert);
+
+            result.Should().Be(expected);
         }
     }
 }
