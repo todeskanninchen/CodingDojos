@@ -16,7 +16,7 @@
 
         private bool IsFizz(int number)
         {
-            return number == 3;
+            return number % 3 == 0;
         }
     }
 }
