@@ -38,6 +38,12 @@
             Should_Convert_Number_To_ExpectedOutput(6, "Fizz");
         }
 
+        [TestMethod]
+        public void CanConvertFive()
+        {
+            Should_Convert_Number_To_ExpectedOutput(5, "Buzz");
+        }
+
         private void Should_Convert_Number_To_ExpectedOutput(int numberToConvert, string expected)
         {
             string result = _sut.Convert(numberToConvert);
