@@ -1,5 +1,7 @@
 ﻿namespace FizzBuzz
 {
+    using System.Collections.Generic;
+
     public class FizzBuzzer
     {
         public string[] FizzBuzzFrom1To16()
@@ -26,9 +28,34 @@
 
         public string[] FizzBuzzInterval(int start, int end)
         {
-            var result = new string[end - start + 1];
-            result[0] = "1";
-            return result;
+            var result = new List<string>();
+            for (int i = start; i <= end; i++)
+            {
+                if (IsFizz(i))
+                {
+                    result.Add("Fizz");
+                }
+                else if (IsBuzz(i))
+                {
+                    result.Add("Buzz");
+                }
+                else
+                {
+                    result.Add(i.ToString());
+                }
+            }
+
+            return result.ToArray();
+        }
+
+        private static bool IsBuzz(int i)
+        {
+            return i%5 == 0;
+        }
+
+        private static bool IsFizz(int i)
+        {
+            return i%3 == 0;
         }
     }
 }

@@ -41,5 +41,13 @@
             var result = _fizzBuzzer.FizzBuzzFrom1To16();
             result.Should().BeEquivalentTo("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz", "16");
         }
+
+        [TestMethod]
+        public void FizzBuzzFrom501To505()
+        {
+            var result = _fizzBuzzer.FizzBuzzInterval(501, 505);
+            result.Should().BeEquivalentTo("Fizz", "502", "503", "Fizz", "Buzz");
+        }
+
     }
 }
