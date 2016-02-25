@@ -33,7 +33,7 @@
         private static bool IsBuzz(int i)
         {
             const int buzzNumber = 5;
-            return IsMutipleOf(i, buzzNumber);
+            return IsMutipleOf(i, buzzNumber) || ContainsDigit(i, buzzNumber);
         }
 
         private static bool IsFizz(int i)

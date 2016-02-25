@@ -32,7 +32,7 @@
         public void FizzBuzzFrom501To505()
         {
             var result = _fizzBuzzer.FizzBuzzInterval(501, 505);
-            result.Should().BeEquivalentTo("Fizz", "502", "Fizz", "Fizz", "Buzz");
+            result.Should().BeEquivalentTo("FizzBuzz", "Buzz", "FizzBuzz", "FizzBuzz", "Buzz");
         }
 
         [TestMethod]
@@ -48,5 +48,13 @@
             var result = _fizzBuzzer.FizzBuzzInterval(13, 13);
             result.Should().BeEquivalentTo("Fizz");
         }
+
+        [TestMethod]
+        public void FizzBuzzInterval_from_51_to_53_should_return_FizzBuzzBuzzFizzBuzz()
+        {
+            var result = _fizzBuzzer.FizzBuzzInterval(51, 53);
+            result.Should().BeEquivalentTo("FizzBuzz","Buzz","FizzBuzz");
+        }
+
     }
 }
