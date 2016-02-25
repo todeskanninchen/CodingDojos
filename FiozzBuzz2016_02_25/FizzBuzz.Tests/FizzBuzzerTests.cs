@@ -26,5 +26,13 @@
             var result = _fizzBuzzer.FizzBuzzFrom1To100();
             result.Length.Should().Be(100);
         }
+
+        [TestMethod]
+        public void FizzBuzzInterval_from_1_to_1_should_return_1()
+        {
+            var result = _fizzBuzzer.FizzBuzzInterval(1, 1);
+            result.Length.Should().Be(1);
+            result[0].Should().Be("1");
+        }
     }
 }
