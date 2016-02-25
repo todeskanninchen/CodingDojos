@@ -25,14 +25,14 @@
         public void FizzBuzzFrom1To16()
         {
             var result = _fizzBuzzer.FizzBuzzInterval(1, 16);
-            result.Should().BeEquivalentTo("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz", "16");
+            result.Should().BeEquivalentTo("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "Fizz", "14", "FizzBuzz", "16");
         }
 
         [TestMethod]
         public void FizzBuzzFrom501To505()
         {
             var result = _fizzBuzzer.FizzBuzzInterval(501, 505);
-            result.Should().BeEquivalentTo("Fizz", "502", "503", "Fizz", "Buzz");
+            result.Should().BeEquivalentTo("Fizz", "502", "Fizz", "Fizz", "Buzz");
         }
 
         [TestMethod]
@@ -40,6 +40,13 @@
         {
             var result = _fizzBuzzer.FizzBuzzInterval(1500, 1500);
             result.Should().BeEquivalentTo("FizzBuzz");
+        }
+
+        [TestMethod]
+        public void FizzBuzzInterval_from_13_to_13_should_return_Fizz()
+        {
+            var result = _fizzBuzzer.FizzBuzzInterval(13, 13);
+            result.Should().BeEquivalentTo("Fizz");
         }
     }
 }

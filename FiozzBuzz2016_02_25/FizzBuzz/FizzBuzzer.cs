@@ -32,12 +32,24 @@
 
         private static bool IsBuzz(int i)
         {
-            return i%5 == 0;
+            const int buzzNumber = 5;
+            return IsMutipleOf(i, buzzNumber);
         }
 
         private static bool IsFizz(int i)
         {
-            return i%3 == 0;
+            const int fizzNumber = 3;
+            return IsMutipleOf(i, fizzNumber) || ContainsDigit(i, fizzNumber);
+        }
+
+        private static bool ContainsDigit(int i, int fizzNumber)
+        {
+            return i.ToString().Contains(fizzNumber.ToString());
+        }
+
+        private static bool IsMutipleOf(int i, int fizzNumber)
+        {
+            return i% fizzNumber == 0;
         }
     }
 }
