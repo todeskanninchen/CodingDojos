@@ -2,9 +2,9 @@
 {
     public class FizzBuzzer
     {
-        public string[] FizzBuzzFrom1To100()
+        public string[] FizzBuzzFrom1To16()
         {
-            var result = new string[100];
+            var result = new string[16];
             result[0] = "1";
             result[1] = "2";
             result[2] = "Fizz";
