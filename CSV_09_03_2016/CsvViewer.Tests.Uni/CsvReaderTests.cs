@@ -1,6 +1,7 @@
 ﻿
 namespace CsvViewer.Tests
 {
+    using System;
     using CsvViewer;
     using FluentAssertions;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -16,14 +17,17 @@ namespace CsvViewer.Tests
         }
 
         [TestMethod]
-        public void Output_Should_Be_Splitted_with_One_Line_Of_Input()
+        public void Reader_read_two_line_input()
         {
-            var input = "abc;def;ghi";
+            var input = "abc;def;ghi" + Environment.NewLine + "ccc;dddd;eeeeee";
             var reader = new CsvReader(input);
 
             reader.Read().Should().BeTrue();
-
             reader.GetCurrent().Should().BeEquivalentTo("abc", "def", "ghi");
+            reader.Read().Should().BeTrue();
+            reader.GetCurrent().Should().BeEquivalentTo("ccc", "dddd", "eeeeee");
+            reader.Read().Should().BeFalse();
         }
+
     }
 }
