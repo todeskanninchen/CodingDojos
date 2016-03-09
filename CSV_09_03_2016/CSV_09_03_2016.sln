@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25029.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csvviewer", "csvviewer\csvviewer.csproj", "{6BE9F88A-3CD3-45A2-8047-56041737C184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvViewer.Tests.Unit", "CsvViewer.Tests.Uni\CsvViewer.Tests.Unit.csproj", "{CF7AB0C3-15A9-4D37-A447-CA213FC1FDEA}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BE9F88A-3CD3-45A2-8047-56041737C184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BE9F88A-3CD3-45A2-8047-56041737C184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BE9F88A-3CD3-45A2-8047-56041737C184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BE9F88A-3CD3-45A2-8047-56041737C184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7AB0C3-15A9-4D37-A447-CA213FC1FDEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7AB0C3-15A9-4D37-A447-CA213FC1FDEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7AB0C3-15A9-4D37-A447-CA213FC1FDEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7AB0C3-15A9-4D37-A447-CA213FC1FDEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
