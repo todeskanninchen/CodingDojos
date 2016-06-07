@@ -1,11 +1,10 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace TennisTests
+﻿namespace TennisTests
 {
     using FluentAssertions;
 
     using Tennis_20160607_2;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class TennisTests
@@ -34,7 +33,7 @@ namespace TennisTests
         [TestMethod]
         public void GivenPlayerBScores_Once_Then_Score_Is_Luv_15()
         {
-            _tennis.ScorePlayerB();
+            PlayerBScoresXTimes(1);
             _tennis.GetCurrentScore().Should().Be("Luv:15");
         }
 
@@ -50,6 +49,22 @@ namespace TennisTests
         {
             PlayerAScoresXTimes(4);
             _tennis.GetCurrentScore().Should().Be("Game player A");
+        }
+
+        [TestMethod]
+        public void GivenPlayerAAndBScores_Two_Times_Then_Score_Is_30_30()
+        {
+            PlayerAScoresXTimes(2);
+            PlayerBScoresXTimes(2);
+            _tennis.GetCurrentScore().Should().Be("30:30");
+        }
+
+        private void PlayerBScoresXTimes(int count)
+        {
+            for (var i = 0; i < count; i++)
+            {
+                _tennis.ScorePlayerB();
+            }
         }
 
         private void PlayerAScoresXTimes(int count)
