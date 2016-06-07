@@ -38,6 +38,13 @@ namespace TennisTests
             _tennis.GetCurrentScore().Should().Be("40:Luv");
         }
 
+        [TestMethod]
+        public void GivenPlayerAScores_Four_Times_Then_He_Wins()
+        {
+            PlayerAScoresXTimes(4);
+            _tennis.GetCurrentScore().Should().Be("Game player A");
+        }
+
         private void PlayerAScoresXTimes(int count)
         {
             for (var i = 0; i < count; i++)
