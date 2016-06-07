@@ -1,11 +1,34 @@
-﻿namespace Tennis_20160607
+﻿namespace Tennis_20160607_2
 {
+    using System.Collections.Generic;
+
     public class Tennis
     {
+        private Dictionary<int, string> _scoreMap;
         private int _scorePlayerA;
 
         private int _scorePlayerB;
 
+        public Tennis()
+        {
+            InitializeScoreMap();
+        }
+
+        private void InitializeScoreMap()
+        {
+            _scoreMap = new Dictionary<int, string>
+                            {
+                                {
+                                    0, "Luv"
+                                },
+                                {
+                                    1, "15"
+                                },
+                                {
+                                    3, "40"
+                                }
+                            };
+        }
 
         public string GetCurrentScore()
         {
@@ -19,15 +42,12 @@
 
         private string FormatScore(int score)
         {
-            var strScorePlayerA = (score == 0)
-                                      ? "Luv"
-                                      : score.ToString();
-            return strScorePlayerA;
+            return _scoreMap[score];
         }
 
         public void ScorePlayerA()
         {
-            _scorePlayerA += 15;
+            _scorePlayerA += 1;
         }
     }
 }

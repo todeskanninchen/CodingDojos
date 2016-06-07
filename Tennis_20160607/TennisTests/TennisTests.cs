@@ -5,24 +5,45 @@ namespace TennisTests
 {
     using FluentAssertions;
 
-    using Tennis_20160607;
+    using Tennis_20160607_2;
 
     [TestClass]
     public class TennisTests
     {
-        [TestMethod]
-        public void InitialScoreIsZeroZero()
+        private Tennis _tennis;
+
+        [TestInitialize]
+        public void Init()
         {
-            var tennis = new Tennis();
-            tennis.GetCurrentScore().Should().Be("0:0");
+            _tennis = new Tennis();
         }
 
         [TestMethod]
-        public void GivenPlayerAScores_Then_Score_is_15_Zero()
+        public void InitialScoreIsZeroZero()
         {
-            var tennis = new Tennis();
-            tennis.ScorePlayerA();
-            tennis.GetCurrentScore().Should().Be("15:Luv");
+            _tennis.GetCurrentScore().Should().Be("0:0");
+        }
+
+        [TestMethod]
+        public void GivenPlayerAScores_Once_Then_Score_Is_15_Zero()
+        {
+            PlayerAScoresXTimes(1);
+            _tennis.GetCurrentScore().Should().Be("15:Luv");
+        }
+
+        [TestMethod]
+        public void GivenPlayerAScores_Three_Times_Then_Score_Is_40_Zero()
+        {
+            PlayerAScoresXTimes(3);
+            _tennis.GetCurrentScore().Should().Be("40:Luv");
+        }
+
+        private void PlayerAScoresXTimes(int count)
+        {
+            for (var i = 0; i < count; i++)
+            {
+                _tennis.ScorePlayerA();
+            }
         }
     }
 }
