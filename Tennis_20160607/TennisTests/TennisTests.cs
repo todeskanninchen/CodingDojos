@@ -32,6 +32,13 @@ namespace TennisTests
         }
 
         [TestMethod]
+        public void GivenPlayerBScores_Once_Then_Score_Is_Luv_15()
+        {
+            _tennis.ScorePlayerB();
+            _tennis.GetCurrentScore().Should().Be("Luv:15");
+        }
+
+        [TestMethod]
         public void GivenPlayerAScores_Three_Times_Then_Score_Is_40_Zero()
         {
             PlayerAScoresXTimes(3);

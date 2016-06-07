@@ -64,5 +64,10 @@
         {
             _scorePlayerA += 1;
         }
+
+        public void ScorePlayerB()
+        {
+            _scorePlayerB += 1;
+        }
     }
 }
