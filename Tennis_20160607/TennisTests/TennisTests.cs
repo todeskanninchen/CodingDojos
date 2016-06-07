@@ -11,7 +11,7 @@ namespace TennisTests
     public class TennisTests
     {
         [TestMethod]
-        public void PlayerAScoresOnce()
+        public void InitialScoreIsZeroZero()
         {
             var tennis = new Tennis();
             tennis.CalculateScore().Should().Be("0:0");
