@@ -14,7 +14,15 @@ namespace TennisTests
         public void InitialScoreIsZeroZero()
         {
             var tennis = new Tennis();
-            tennis.CalculateScore().Should().Be("0:0");
+            tennis.GetCurrentScore().Should().Be("0:0");
+        }
+
+        [TestMethod]
+        public void GivenPlayerAScores_Then_Score_is_15_Zero()
+        {
+            var tennis = new Tennis();
+            tennis.ScorePlayerA();
+            tennis.GetCurrentScore().Should().Be("15:Luv");
         }
     }
 }
