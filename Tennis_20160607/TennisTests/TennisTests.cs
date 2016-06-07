@@ -59,6 +59,14 @@
             _tennis.GetCurrentScore().Should().Be("30:30");
         }
 
+        [TestMethod]
+        public void GivenPlayerAScores_5_Times_And_PlayerBScores_4_Times_Then_Score_Is_AdvantageA()
+        {
+            PlayerAScoresXTimes(5);
+            PlayerBScoresXTimes(4);
+            _tennis.GetCurrentScore().Should().Be("Advantage player A");
+        }
+
         private void PlayerBScoresXTimes(int count)
         {
             for (var i = 0; i < count; i++)
